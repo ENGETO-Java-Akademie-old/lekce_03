@@ -462,6 +462,12 @@ pole[0].jmeno = "Honza";
 ```
 
 
+### Příklady 
+#### 1. Nevalidní pokusy - jiný typ do pole
+Zkuste do pole typu `Integer[]` přiřadit objekt jiného typu.
+#### 2. Nevalidní pokusy - mimo rozsah
+Zkuste do pole `Integer[] pole = new Integer[10]` dát prvek na devátou, desátou a jedenáctou pozici.
+
 ## Cykly (forEach, for, while)
 
 
@@ -537,6 +543,10 @@ class Main {
 ```
 
 https://repl.it/@LukasHorak/FizzBuzzForCycle#Main.java
+
+### Příklady 
+#### 1. Řada
+Napiště program, který do pole uloží čísla prvních 8 čísel Fibbonaciho řady 0,1,1,2,3,5,8,13 a vypíše jenom sudá čísla v opačném pořadí.
 
 ## Zaklady Kolekci (List)
 
