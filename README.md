@@ -16,11 +16,11 @@
 
 ## Co nás čeká
 
-- [Podminky (if/else, switch)](#podminky)
-- [Pole (Array)](#pole)
-- [Cykly (forEach, for, while)](#cykly)
-- [Zaklady Kolekci (List)](#zaklady-kolekci)
-- [Kolekce (Ruzne implementace Listu, Map, Set)](#kolekce)
+- [Podminky (if/else, switch)](#podminky-if-else-switch)
+- [Pole (Array)](#pole-array)
+- [Cykly (forEach, for, while)](#cykly-foreach-for-while)
+- [Zaklady Kolekci (List)](#zaklady-kolekci-list)
+- [Kolekce (Ruzne implementace Listu, Map, Set)](#kolekce-ruzne-implementace-listu-map-set)
 
 ## Podmínky (if/else, switch)
 
