@@ -338,35 +338,54 @@ https://repl.it/@LukasHorak/FizzBuzzIfElseOnly#Main.java
 
 ## Cykly (forEach, for, while)
 
+### for 
 ```
 for (int i = 0; i < 10; i++){
-    //
+    System.out.println(i);
 }
 ```
 
+### for cyklus nad polem pomocí indexu
 ```
 Integer[] pole = new Integer[] {1,2,3}
 for (int i = 0; i < pole.length; i++){
-    //
+    System.out.println(pole[i]);
 }
 ```
 
+### for each
 ```
-Integer[] pole = new Integer[] {1,2,3}
-
+Integer[] pole = {1,2,3}
 for (Integer i: pole){
-    //
+    System.out.println(i);
 }
 ```
-
+   
+### while 
 ```
 int i = 0;
 while (i < 10){
     i = i + 1; // nebo i++;
-    //
+    System.out.println(i);
 }
 ```
 
+### for each pomocí Stream API
+```
+import java.util.Arrays;
+
+Integer[] pole = {1,2,3,4};
+Arrays.stream(pole).forEach(i -> { System.out.println(i); });
+    
+```
+
+### Jak na FizzBuzz?
+
+Teď už umíme všechno potřebné. Umíme cyklus, podmínku i metodu.
+
+
 ## Zaklady Kolekci (List)
+
+
 
 ## Kolekce (Ruzne implementace Listu, Map, Set)
