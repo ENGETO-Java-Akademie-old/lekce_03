@@ -162,35 +162,68 @@ https://repl.it/@LukasHorak/FizzBuzzCopyPaste#Main.java
 
 ## Podmínky (if/else, switch)
 
+Zatím jsme se naučili, že počítač vykoná všechny příkazy v pořádí v jakém jsou v programu napsané. Často to ale není dostatečné a je potřeba vykonat dva rozdílné části programu podle situace. K tomuto slouží podmíněné príkazy uvozené pomocí klíčových slov `if`, `else`.
+
+Podmíněný příkaz si můžeme představit jako výhybku na kolejích. Podle směru přehození výhybky pokračujeme buď přímo, nebo projedeme „oklikou“ přes několik příkazů navíc. Na konci se běh vlakové trati zase spojí.
+
+### Podmínka `if`
+
+#### Podmínka s jedním příkazem
+Nejjednodušší možný zápis (ale značne riskantní) je tento:
+```
+if (vyraz) příkaz;
+```
+
+Pozor, zkuste se zamyslet jaké příkazy se vykonají v případě, že podmínka je splněna a jaké v případě, že není?
+```
+if (vyraz)
+    příkaz;
+dalšíPříkaz;
+```
+
+výraz == true: příkaz; dalšíPříkaz;
+výraz == false: dalšíPříkaz;
+
+#### Podmínka s blokem příkazů
 ```
 if (vyraz) {
-    //
+    příkaz;
+    dalšíPříkaz;
 }
 ```
 
+#### Podmínka s alternativní cestou `else`
+Pokud chceme vykonat různé příkazy v obou případech, tak můžeme použít klíčové slovo `else`
+
 ```
 if (vyraz) {
-    //
+    příkaz;
+    dalšíPříkaz;
 } else {
-    
+    jinýPříkaz;
+    dalšíPříkaz;
 }
 ```
 
 ```
 if (vyraz) {
-    //
+    příkaz;
+    dalšíPříkaz;
 } else if (vyraz 2) {
-    //
+    jinýPříkaz;
+    dalšíPříkaz;
 }
 ```
 
 ```
 if (vyraz) {
-    //
+    příkaz;
+    dalšíPříkaz;
 } else if (vyraz 2) {
-    //
+    jinýPříkaz;
+    dalšíPříkaz;
 } else {
-    //
+    dalšíPříkaz;
 }
 ```
 
@@ -198,12 +231,12 @@ if (vyraz) {
 ```
 if (vyraz) {
     if (vyraz 2) {
-        //
+        příkaz;
     } else {
-        //
+        jinýPříkaz;
     }
 } else {
-    //
+    dalšíPříkaz;
 }
 ```
 
@@ -334,7 +367,42 @@ class Main {
 
 https://repl.it/@LukasHorak/FizzBuzzIfElseOnly#Main.java
 
+### Podmíněne přirazení `výraz ? truePříkaz: falsePříkaz;`
+
+V některých situacích potřebuje přiřadit dvě různé hodnoty do proměnné na základě podmínky. Pokud je to relativně jednoduchý výraz, tak je možné `if - else` nahradit zkráceným zápisem pomocí `?` a `:`.
+
+```
+String promenna = "Yes";
+String vysledek = (promenna == "Yes")? "Ano":"Ne";
+```
+
+### Příklady 
+
+#### 1. Slovní známka
+Napište metodu, která na základě známky vrátí slovní výraz. 1: Výborně, 2: Chvalitebně, 3: Dobře, 4: Dostatečně, 5: Nedostatečně
+
+#### 2. Přestupní rok
+Napište metodu která vrátí boolean na základě jesli daný rok je nebo není přestupný.
+
+
 ## Pole (Array)
+
+
+
+### Definice pole
+```
+Integer[] pole;
+```
+
+### Definice pole dané velikosti
+```
+Integer[] pole = new Integer[10];
+```
+
+### Definice pole z existujicích hodnot
+```
+Integer[] pole = {1,2,3,4};
+```
 
 ## Cykly (forEach, for, while)
 
@@ -381,11 +449,35 @@ Arrays.stream(pole).forEach(i -> { System.out.println(i); });
 
 ### Jak na FizzBuzz?
 
-Teď už umíme všechno potřebné. Umíme cyklus, podmínku i metodu.
+Teď už umíme všechno potřebné, umíme cyklus, podmínku i metodu. Konečně můžeme nahradit rucně rozkopírované volání od jedné do sta voláním v cyklu. 
+
+```
+class Main {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 100; i++) {
+      System.out.println(spocitejFizzBuzz(i));
+    }
+  }
+
+  static String spocitejFizzBuzz(int i){
+    String vysledek = String.valueOf(i);
+      if (i % 3 == 0 ){
+        vysledek = "Fizz";
+      }
+      if (i % 5 == 0 ){
+        vysledek = "Buzz";
+      }
+      if (i % 15 == 0 ){
+        vysledek = "FizzBuzz";
+      }
+      return vysledek;
+  }
+}
+```
+
+https://repl.it/@LukasHorak/FizzBuzzForCycle#Main.java
 
 
 ## Zaklady Kolekci (List)
-
-
 
 ## Kolekce (Ruzne implementace Listu, Map, Set)
