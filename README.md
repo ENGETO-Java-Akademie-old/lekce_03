@@ -16,11 +16,11 @@
 
 ## Co nás čeká
 
-- [Podminky (if/else, switch)](#podminky-if-else-switch)
+- [Podminky (if/else, switch)](#podminky-ifelse-switch)
 - [Pole (Array)](#pole-array)
 - [Cykly (forEach, for, while)](#cykly-foreach-for-while)
-- [Zaklady Kolekci (List)](#zaklady-kolekci-list)
-- [Kolekce (Ruzne implementace Listu, Map, Set)](#kolekce-ruzne-implementace-listu-map-set)
+- [Základy Kolekcí (List)](#zaklady-kolekci-list)
+- [Kolekce (Různé implementace Listu, Mapy, Setu)](#kolekce-ruzne-implementace-listu-mapy-setu)
 
 ## Motivace příkladem
 
@@ -376,6 +376,29 @@ String promenna = "Yes";
 String vysledek = (promenna == "Yes")? "Ano":"Ne";
 ```
 
+### Jak na výrazy
+
+### Složené výrazy
+
+#### AND - `(... && ...)`
+```
+if (true && false){
+    //
+}
+```
+#### OR - `(... || ...)`
+```
+if (true || false){
+    //
+}
+```
+#### NOT - `(... || ...)`
+```
+if (!false){
+    //
+}
+```
+
 ### Příklady 
 
 #### 1. Slovní známka
@@ -386,27 +409,65 @@ Napište metodu která vrátí boolean na základě jesli daný rok je nebo nen�
 
 
 ## Pole (Array)
+Velmi často potřebujeme v programování pracovat se skupinou hodnot stejného typu. Přitom často nevíme, kolik těchto hodnot bude.
 
+V Javě jsou 2 přístupy - pole a kolekce
 
+Nejprve si vysvětlíme co je to jednoduché pole.
 
 ### Definice pole
+Pole je proměnná, která uloží pevně definovaný počet prvků jednoho typu.
+
 ```
 Integer[] pole;
 ```
 
 ### Definice pole dané velikosti
+Při vytvoření instance pole je nutné specikovat velikost pole. Protože jakmile se jednou vytvoří, tak už nejde velikost změnit. Jenom vytvořit nové pole jiné velikosti a prvky do nového pole přesunout. 
 ```
 Integer[] pole = new Integer[10];
 ```
 
 ### Definice pole z existujicích hodnot
+Zjedenodušený zápis, pokud už máme instance prvků, které chcem mít v poli.
 ```
 Integer[] pole = {1,2,3,4};
 ```
 
+### Práce s polem
+Pole je indexované od nuly. K prvnímu prvku tedy přistupujeme `pole[0]`
+
+```
+Integer[] pole = {1,2,3,4};
+Integer hodnotaDruha = pole[1];
+pole[2] = 5;
+```
+
+```
+String[] poleTextu;
+int velikostPole = 15;
+poleTextu = new String[velikostPole];
+```
+
+### Pole objektů
+```
+class Uzivatel {
+    String jmeno;
+}
+
+Uzivatel[] pole = new Uzivatel[10];
+
+pole[0] = new Uzivatel();
+pole[0].jmeno = "Honza";
+```
+
+
 ## Cykly (forEach, for, while)
 
+
 ### for 
+Syntaxe; `for (inicializace; podmínka; příkazPo) příkaz;`
+
 ```
 for (int i = 0; i < 10; i++){
     System.out.println(i);
@@ -477,7 +538,6 @@ class Main {
 
 https://repl.it/@LukasHorak/FizzBuzzForCycle#Main.java
 
-
 ## Zaklady Kolekci (List)
 
-## Kolekce (Ruzne implementace Listu, Map, Set)
+## Kolekce (Různé implementace Listu, Mapy, Setu)
