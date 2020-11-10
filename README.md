@@ -468,9 +468,10 @@ Zkuste do pole typu `Integer[]` přiřadit objekt jiného typu.
 Zkuste do pole `Integer[] pole = new Integer[10]` dát prvek na devátou, desátou a jedenáctou pozici.
 
 ## Cykly (forEach, for, while)
-
+V přechozí části jsme se naučili používat podmínky, ale co když potřebujeme nějakou akci opakovat a dopředu nevíme kolikrát to bude. V tom případě se použije cyklus. Existuje několik různých možností jak opakovat nějakou operaci na základě podmínky. 
 
 ### for 
+Základní 
 
 Syntaxe; `for (inicializace; podmínka; příkazPo) příkaz;`
 
@@ -480,7 +481,16 @@ for (int i = 0; i < 10; i++){
 }
 ```
 
+Jak to funguje:
+1. Inicializace
+2. Vyhodnocení podmínky (konec v případě, že podmínka není splněna)
+3. Provedení jednoho nebo více příkazů v cyklu
+4. Provedení příkazuPo
+5. Opakování
+
 ### for cyklus nad polem pomocí indexu
+
+V případě, že máme pole a chceme nad ním iterovat, tak to můžeme provést pomocí indexu.
 
 ```
 Integer[] pole = new Integer[] {1,2,3}
@@ -490,6 +500,8 @@ for (int i = 0; i < pole.length; i++){
 ```
 
 ### for each
+Jednodušší zápis, v případě, že procházíme prvky v daném pořadí.
+
 ```
 Integer[] pole = {1,2,3}
 for (Integer i: pole){
@@ -498,6 +510,8 @@ for (Integer i: pole){
 ```
    
 ### while 
+Další možnost je `while`, který připomíná `if`, kde se program opakuje dokud je podmínka splněná.
+
 ```
 int i = 0;
 while (i < 10){
