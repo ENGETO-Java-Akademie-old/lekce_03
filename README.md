@@ -6,21 +6,20 @@
 
 ## Co bychom měli mít hotové
 
- - Po dvou hodinách už umíme pracovat ve vývojovém prostředí, uníme vytvořit projekt, spustit program a základy debugování
+ - Po dvou hodinách už umíme pracovat ve vývojovém prostředí, umíme vytvořit projekt, spustit program a základy debugování
  
- - Umíme pracovat s proměnými, víme jak definovat různé typy, jak přiřadit hodnotu do proměnné
+ - Umíme pracovat s proměnnými, víme jak definovat různé typy, jak přiřadit hodnotu do proměnné
 
- - Měli bychom vědět jak definovat vlastní třídu včetně proměnných, kontruktorů a metod 
+ - Měli bychom vědět jak definovat vlastní třídu včetně proměnných, konstruktorů a metod 
  
  - Měli bychom znát základní operátory a umět z nich sestavit výraz
 
 ## Co nás čeká
 
-- [Podminky (if/else, switch)](#podminky-ifelse-switch)
+- [Podmínky (if/else, switch)](#podmínky-ifelse-switch)
 - [Pole (Array)](#pole-array)
 - [Cykly (forEach, for, while)](#cykly-foreach-for-while)
 - [Základy Kolekcí (List)](#zaklady-kolekci-list)
-- [Kolekce (Různé implementace Listu, Mapy, Setu)](#kolekce-ruzne-implementace-listu-mapy-setu)
 
 ## Motivace příkladem
 
@@ -162,7 +161,7 @@ https://repl.it/@LukasHorak/FizzBuzzCopyPaste#Main.java
 
 ## Podmínky (if/else, switch)
 
-Zatím jsme se naučili, že počítač vykoná všechny příkazy v pořádí v jakém jsou v programu napsané. Často to ale není dostatečné a je potřeba vykonat dva rozdílné části programu podle situace. K tomuto slouží podmíněné príkazy uvozené pomocí klíčových slov `if`, `else`.
+Zatím jsme se naučili, že počítač vykoná všechny příkazy v pořádí v jakém jsou v programu napsané. Často to ale není dostatečné a je potřeba vykonat dvě rozdílné části programu podle situace. K tomuto slouží podmíněné príkazy uvozené pomocí klíčových slov `if`, `else`.
 
 Podmíněný příkaz si můžeme představit jako výhybku na kolejích. Podle směru přehození výhybky pokračujeme buď přímo, nebo projedeme „oklikou“ přes několik příkazů navíc. Na konci se běh vlakové trati zase spojí.
 
@@ -242,7 +241,7 @@ if (vyraz) {
 
 ### Jak na FizzBuzz?
 
-Jak teď můžeme vylepšit FizzBuzz? Už umíme metodu se vstupním proměnou a výsledkem a teď jsme se naučili podmínky. Když to spojíme dohromady, tak máme řešení, které je o krok lepší.
+Jak teď můžeme vylepšit FizzBuzz? Už umíme metodu se vstupním parametrem a výsledkem a teď jsme se naučili podmínky. Když to spojíme dohromady, tak máme řešení, které je o krok lepší.
 
 ```
 class Main {
@@ -404,8 +403,8 @@ if (!false){
 #### 1. Slovní známka
 Napište metodu, která na základě známky vrátí slovní výraz. 1: Výborně, 2: Chvalitebně, 3: Dobře, 4: Dostatečně, 5: Nedostatečně
 
-#### 2. Přestupní rok
-Napište metodu která vrátí boolean na základě jesli daný rok je nebo není přestupný.
+#### 2. Přestupný rok
+Napište metodu která vrátí boolean na základě toho, jesli daný rok je nebo není přestupný.
 
 
 ## Pole (Array)
@@ -472,6 +471,7 @@ Zkuste do pole `Integer[] pole = new Integer[10]` dát prvek na devátou, desát
 
 
 ### for 
+
 Syntaxe; `for (inicializace; podmínka; příkazPo) příkaz;`
 
 ```
@@ -481,6 +481,7 @@ for (int i = 0; i < 10; i++){
 ```
 
 ### for cyklus nad polem pomocí indexu
+
 ```
 Integer[] pole = new Integer[] {1,2,3}
 for (int i = 0; i < pole.length; i++){
@@ -516,7 +517,7 @@ Arrays.stream(pole).forEach(i -> { System.out.println(i); });
 
 ### Jak na FizzBuzz?
 
-Teď už umíme všechno potřebné, umíme cyklus, podmínku i metodu. Konečně můžeme nahradit rucně rozkopírované volání od jedné do sta voláním v cyklu. 
+Teď už umíme všechno potřebné, umíme cyklus, podmínku i metodu. Konečně můžeme nahradit ručně rozkopírované volání od jedné do sta voláním v cyklu. 
 
 ```
 class Main {
@@ -527,17 +528,16 @@ class Main {
   }
 
   static String spocitejFizzBuzz(int i){
-    String vysledek = String.valueOf(i);
-      if (i % 3 == 0 ){
-        vysledek = "Fizz";
-      }
-      if (i % 5 == 0 ){
-        vysledek = "Buzz";
-      }
-      if (i % 15 == 0 ){
-        vysledek = "FizzBuzz";
-      }
-      return vysledek;
+    if (i % 15 == 0 ){
+        return "FizzBuzz";
+    }
+    if (i % 5 == 0 ){
+        return "Buzz";
+    }
+    if (i % 3 == 0 ){
+        return "Fizz";
+    }
+    return String.valueOf(i);  
   }
 }
 ```
@@ -548,6 +548,5 @@ https://repl.it/@LukasHorak/FizzBuzzForCycle#Main.java
 #### 1. Řada
 Napiště program, který do pole uloží čísla prvních 8 čísel Fibbonaciho řady 0,1,1,2,3,5,8,13 a vypíše jenom sudá čísla v opačném pořadí.
 
-## Zaklady Kolekci (List)
+## Zaklady Kolekcí (List)
 
-## Kolekce (Různé implementace Listu, Mapy, Setu)
