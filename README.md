@@ -381,7 +381,7 @@ String vysledek = (promenna == "Yes")? "Ano":"Ne";
 
 #### AND - `(... && ...)`
 ```
-if (true && false){
+if (true && true){
     //
 }
 ```
@@ -391,7 +391,7 @@ if (true || false){
     //
 }
 ```
-#### NOT - `(... || ...)`
+#### NOT - `!(...)`
 ```
 if (!false){
     //
@@ -550,3 +550,43 @@ Napiště program, který do pole uloží čísla prvních 8 čísel Fibbonaciho
 
 ## Základy Kolekcí (List)
 
+Jako poslední si dneska ukážeme základ Kolekcí v Javě. Je to relativně komplikové téma, ke kterému se budeme ještě vracet, ale je dobré postupovat krok po kroku.
+
+Zkuste se zamyslet proč pole není dostatečné a je potřeba přijít s celou řadou jiných datových struktur?
+
+Pro začátek se budeme věnovat `ArrayList` a `HashMap`
+
+ArrayList - funguje podobně jako pole, ale automatizuje práce se změnout velikosti
+
+```
+import java.util.ArrayList;
+
+ArrayList<String> list = new ArrayList<>();
+list.add("Hodnota1");
+list.add("Hodnota2");
+
+String hodnota = list.get(0);
+list.remove(0);
+
+String hodnota2 = list.get(0);
+```
+
+HashMap - datová struktura, která ukládá dvojice identifikátor-hodnota a umožňuje podle identifikátorů velmi efektivně vyhledávat.
+
+```
+import java.util.HashMap;
+
+HashMap<String, String> mapa = new HashMap<>();
+mapa.put("klic1", "Hodnota1");
+mapa.put("klic2", "Hodnota2");
+
+String hodnota1 = mapa.get("klic1");
+
+mapa.remove("klic1");
+
+String coJeTady = mapa.getOrDefault("klic1", "Nic");
+```
+
+### Příklady 
+#### 1. Fronta
+Zkuste se zamuslet, jak budete řesit program, který bude ukládat jména lidí, kteří přijdou do restaurace a budou čekat na obsloužení. Nově příchozí se zapíšou nakonec seznamu. Když se uvolní místo, tak se vezmou lidi od začátku seznamu. A občas se stane, že někdo už nechce čekat a odejde uprostřed čekání.
