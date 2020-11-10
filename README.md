@@ -19,7 +19,7 @@
 - [Podmínky (if/else, switch)](#podmínky-ifelse-switch)
 - [Pole (Array)](#pole-array)
 - [Cykly (forEach, for, while)](#cykly-foreach-for-while)
-- [Základy Kolekcí (List)](#zaklady-kolekci-list)
+- [Základy Kolekcí (List)](#základy-kolekcí-list)
 
 ## Motivace příkladem
 
@@ -548,5 +548,5 @@ https://repl.it/@LukasHorak/FizzBuzzForCycle#Main.java
 #### 1. Řada
 Napiště program, který do pole uloží čísla prvních 8 čísel Fibbonaciho řady 0,1,1,2,3,5,8,13 a vypíše jenom sudá čísla v opačném pořadí.
 
-## Zaklady Kolekcí (List)
+## Základy Kolekcí (List)
 
